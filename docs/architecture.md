@@ -28,17 +28,17 @@ OctoFit Tracker is a three-tier application for a school fitness program. The st
 
 ## Implementation decisions
 
+## Implementation decisions
+
 Record your plan here before editing code.
 
-- **Presentation tier decision:** Implement the React and Vite frontend after the data and API contracts are working. Replace the pending implementation UI with real API data, including loading, empty, and error states. Ensure alerts and other UI elements are accessible.
-- **Logic tier decision:** Implement the Express and TypeScript API routes for activities, teams, the leaderboard, and workout suggestions. Validate requests and return deliberate 4xx responses for invalid input, malformed IDs, and missing users.
-- **Data tier decision:** Complete the Mongoose schemas and required validation rules for User, Team, Activity, and Workout. Update the seed script to create the required test fixtures idempotently, so repeated runs produce predictable data without unnecessary duplication.
-- **Activity tracking approach:** Validate activity input and referenced user and team IDs, verify that the referenced records exist, and handle invalid IDs without allowing Mongoose cast errors to become 500 responses.
-- **Team management approach:** Implement the team listing and creation contracts, enforce the required team name, and preserve the submitted name and mascot.
-- **Leaderboard approach:** Calculate each team's total activity points, sort teams from highest to lowest total, and return the required team name, total points, and 1-based rank.
-- **Workout suggestions approach:** Match the requested email to the correct user, use that user's goal and recent activity patterns to select relevant workouts, and provide a focus and reason for each suggestion. Return a deliberate 4xx response when the user is not found.
-
-**Implementation order:** Complete and test the data contracts first, implement and test the API second, and connect the frontend to the working API last. Fix and retest failures at each tier before proceeding.
+- Presentation tier decision: Implement the React and Vite frontend after the data and API contracts are working. Replace the pending implementation UI with real API data, including loading, empty, and error states. Ensure alerts and other UI elements are accessible.
+- Logic tier decision: Implement the Express and TypeScript API routes for activities, teams, the leaderboard, and workout suggestions. Validate requests and return deliberate 4xx responses for invalid input, malformed IDs, and missing users.
+- Data tier decision: Complete the Mongoose schemas and required validation rules for User, Team, Activity, and Workout. Update the seed script to create the required test fixtures idempotently, so repeated runs produce predictable data without unnecessary duplication.
+- Activity tracking approach: Validate activity input and referenced user and team IDs, verify that the referenced records exist, and handle invalid IDs without allowing Mongoose cast errors to become 500 responses.
+- Team management approach: Implement the team listing and creation contracts, enforce the required team name, and preserve the submitted name and mascot.
+- Leaderboard approach: Calculate each team's total activity points, sort teams from highest to lowest total, and return the required team name, total points, and 1-based rank.
+- Workout suggestions approach: Match the requested email to the correct user, use that user's goal and recent activity patterns to select relevant workouts, and provide a focus and reason for each suggestion. Return a deliberate 4xx response when the user is not found.
 
 ## Test plan
 
