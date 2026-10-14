@@ -31,8 +31,18 @@ OctoFit Tracker is a three-tier application for a school fitness program. The st
 Record your plan here before editing code.
 
 - Presentation tier decision:
+  - Wire the React pages to fetch real data
+  - Implement loading, empty, and failure states
+  - Ensure the UI matches the expected accessible behavior
+
 - Logic tier decision:
+  - Build /api/activities, /api/teams, /api/leaderboard, and /api/workouts/suggestions/:userEmail
+  - Ensure invalid IDs and missing users return deliberate 4xx responses instead of casts/500s
+
 - Data tier decision:
+  - Implement the Mongoose schemas and required validation rules
+  - Make the seed script idempotent and create the required test fixtures
+
 - Activity tracking approach:
 - Team management approach:
 - Leaderboard approach:
@@ -43,7 +53,19 @@ Record your plan here before editing code.
 Record the commands you run and what each failure means.
 
 - Data-tier command: `npm run test:data --prefix octofit-tracker/backend`
+  - Required schema validations are missing for User, Team, Activity, and Workout
+  - The seed logic is not yet producing the required idempotent fixtures
+
 - API command: `npm run test:api --prefix octofit-tracker/backend`
+  - Activity validation and 4xx handling are incomplete
+  - Leaderboard sorting does not match the expected ordering
+  - Workout suggestions are not matched by the correct user activity pattern
+
 - Frontend command: `npm test --prefix octofit-tracker/frontend`
+  - The UI still renders “Implementation pending”
+  - Loading, empty, and error states are not implemented
+  - Accessible alerts and real data rendering are missing
+
 - Backend build command: `npm run build --prefix octofit-tracker/backend`
+
 - Frontend build command: `npm run build --prefix octofit-tracker/frontend`
